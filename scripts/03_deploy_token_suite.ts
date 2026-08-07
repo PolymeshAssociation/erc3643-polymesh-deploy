@@ -48,6 +48,15 @@ async function main() {
   console.log("Calling deployTREXSuite with salt:", salt);
   console.log("Token name / symbol:", tokenDetails.name, "/", tokenDetails.symbol);
 
+  saveDeployments({
+    tokenSuiteSalt: salt,
+    tokenName: tokenDetails.name,
+    tokenSymbol: tokenDetails.symbol,
+    tokenDecimals: tokenDetails.decimals,
+    tokenIdentityOwner: tokenDetails.owner,
+    tokenOnchainIdAtDeployment: tokenDetails.ONCHAINID,
+  });
+
   try {
     // Some versions take (salt, tokenDetails, claimDetails)
     // Others take only (tokenDetails, claimDetails) when used via Gateway

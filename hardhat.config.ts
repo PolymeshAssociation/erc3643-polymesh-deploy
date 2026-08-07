@@ -28,7 +28,7 @@ const config: HardhatUserConfig = {
   },
   networks: {
     polymeshLocal: {
-      url: process.env.ETH_RPC_URL || "http://127.0.0.1:8545",
+      url: process.env.ETH_RPC_URL || "http://127.0.0.1:8544",
       accounts: [ALITH_PK],
       chainId: Number(process.env.CHAIN_ID) || 1641818,
       timeout: 180_000,
@@ -38,6 +38,22 @@ const config: HardhatUserConfig = {
     hardhat: {
       chainId: 31337,
     },
+  },
+  etherscan: {
+    apiKey: {
+      polymeshLocal: process.env.BLOCKSCOUT_API_KEY || "blockscout",
+    },
+    customChains: [
+      {
+        network: "polymeshLocal",
+        chainId: Number(process.env.CHAIN_ID) || 1641818,
+        urls: {
+          apiURL: process.env.BLOCKSCOUT_API_URL || "http://127.0.0.1:4001/api",
+          browserURL:
+            process.env.BLOCKSCOUT_BROWSER_URL || "http://127.0.0.1:4000",
+        },
+      },
+    ],
   },
   paths: {
     sources: "./contracts",

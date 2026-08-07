@@ -8,7 +8,14 @@
     "deploy:impls": "hardhat run scripts/01_deploy_trex_implementations.ts --network polymeshLocal",
     "deploy:factory": "hardhat run scripts/02_deploy_trex_authority_and_factory.ts --network polymeshLocal",
     "deploy:suite": "hardhat run scripts/03_deploy_token_suite.ts --network polymeshLocal",
-    "deploy:all": "npm run deploy:onchainid && npm run deploy:impls && npm run deploy:factory && npm run deploy:suite"
+    "deploy:all": "npm run deploy:onchainid && npm run deploy:impls && npm run deploy:factory && npm run deploy:suite",
+    "verify:blockscout": "hardhat run scripts/04_verify_blockscout.ts --network polymeshLocal",
+    "token:prepare-investor": "HARDHAT_NETWORK=polymeshLocal node -r ts-node/register/transpile-only -r hardhat/register scripts/05_prepare_investor.ts",
+    "token:clear-claim-topics": "HARDHAT_NETWORK=polymeshLocal node -r ts-node/register/transpile-only -r hardhat/register scripts/06_clear_claim_topics.ts",
+    "token:mint": "HARDHAT_NETWORK=polymeshLocal node -r ts-node/register/transpile-only -r hardhat/register scripts/07_mint_tokens.ts",
+    "token:transfer": "HARDHAT_NETWORK=polymeshLocal node -r ts-node/register/transpile-only -r hardhat/register scripts/08_transfer_tokens.ts",
+    "token:setup-claim-issuer": "HARDHAT_NETWORK=polymeshLocal node -r ts-node/register/transpile-only -r hardhat/register scripts/09_setup_claim_issuer.ts",
+    "token:onboard-investor": "HARDHAT_NETWORK=polymeshLocal node -r ts-node/register/transpile-only -r hardhat/register scripts/10_onboard_investor_with_claims.ts"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
