@@ -15,7 +15,9 @@
     "token:mint": "HARDHAT_NETWORK=polymeshLocal node -r ts-node/register/transpile-only -r hardhat/register scripts/07_mint_tokens.ts",
     "token:transfer": "HARDHAT_NETWORK=polymeshLocal node -r ts-node/register/transpile-only -r hardhat/register scripts/08_transfer_tokens.ts",
     "token:setup-claim-issuer": "HARDHAT_NETWORK=polymeshLocal node -r ts-node/register/transpile-only -r hardhat/register scripts/09_setup_claim_issuer.ts",
-    "token:onboard-investor": "HARDHAT_NETWORK=polymeshLocal node -r ts-node/register/transpile-only -r hardhat/register scripts/10_onboard_investor_with_claims.ts"
+    "token:onboard-investor": "HARDHAT_NETWORK=polymeshLocal node -r ts-node/register/transpile-only -r hardhat/register scripts/10_onboard_investor_with_claims.ts",
+    "token:pause": "HARDHAT_NETWORK=polymeshLocal node -r ts-node/register/transpile-only -r hardhat/register scripts/11_set_token_pause_state.ts --action pause",
+    "token:unpause": "HARDHAT_NETWORK=polymeshLocal node -r ts-node/register/transpile-only -r hardhat/register scripts/11_set_token_pause_state.ts --action unpause"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
