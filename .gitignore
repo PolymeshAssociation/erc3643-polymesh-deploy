@@ -1,0 +1,9 @@
+node_modules/
+artifacts/
+cache/
+dist/
+deployments/*.json
+.env
+*.log
+trex-src/
+.DS_Store
